@@ -61,6 +61,8 @@ def acc_val_classes(net, testloader, classes):
 
 model_file_name = './my_model.h5'
 model = pickle_from_file(model_file_name)
+torch_model = model.graph.produce_model()
+torch.save(torch_model, 'test.pth')
 # results = model.evaluate(x_test, y_test)
 # print(results)
 
